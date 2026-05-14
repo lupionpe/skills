@@ -39,6 +39,8 @@ Present the proposed breakdown as a numbered list. For each slice, show:
 - **Type**: HITL / AFK
 - **Blocked by**: which other slices (if any) must complete first
 - **User stories covered**: which user stories this addresses (if the source material has them)
+- **Test intent**: behavior-level tests or validation that prove this slice is complete
+- **Commit stack**: the small, reviewable commits this slice should produce
 
 Ask the user:
 
@@ -46,8 +48,10 @@ Ask the user:
 - Are the dependency relationships correct?
 - Should any slices be merged or split further?
 - Are the correct slices marked as HITL and AFK?
+- Does the test intent prove the behavior we care about?
+- Is the test intent focused on public interfaces rather than implementation details?
 
-Iterate until the user approves the breakdown.
+Iterate until the user approves the breakdown and test intent.
 
 ### 5. Publish the issues to the issue tracker
 
@@ -72,12 +76,23 @@ Avoid specific file paths or code snippets — they go stale fast. Exception: if
 - [ ] Criterion 2
 - [ ] Criterion 3
 
+## Test intent
+
+- Behavior: <observable behavior this issue must prove>
+  Public interface: <API, CLI, UI, workflow, file format, docs artifact, etc.>
+  Why this matters: <risk, user value, or acceptance criterion>
+  Refactor-safe because: <why this avoids implementation details>
+
+## Commit stack
+
+- Commit 1: <one logical change>. Validation: <test/check proving this commit is clean>
+- Commit 2: <one logical change>. Validation: <test/check proving this commit is clean>
+
 ## Blocked by
 
 - A reference to the blocking ticket (if any)
 
 Or "None - can start immediately" if no blockers.
-
 </issue-template>
 
 Do NOT close or modify any parent issue.
