@@ -119,10 +119,6 @@ When working from an issue with a `## Commit stack`, keep TDD vertical: one beha
 
 A clean commit does one logical thing, builds on previous commits, preserves or adds relevant tests, avoids unrelated changes, and is easy to review or revert. Clean WIP or fixup commits before review.
 
-## Non-Negotiable Commit Rule
-
-When a `## Commit stack` exists, each commit is part of the TDD workflow. A slice is complete only when the test failed correctly, the minimal implementation passed, focused tests ran, only that slice was staged, and a clean atomic commit exists.
-
 ## Checklist Per Cycle
 
 ```
