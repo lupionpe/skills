@@ -8,7 +8,7 @@ disable-model-invocation: true
 
 Scaffold the per-repo configuration that the engineering skills assume:
 
-- **Issue tracker** — where issues live (GitHub by default; local markdown is also supported out of the box)
+- **Issue tracker** — where issues live (local markdown by default; GitHub, GitLab, and other trackers are also supported)
 - **Triage labels** — the strings used for the five canonical triage roles
 - **Domain docs** — where `CONTEXT.md` and ADRs live, and the consumer rules for reading them
 
@@ -25,7 +25,7 @@ Look at the current repo to understand its starting state. Read whatever exists;
 - `CONTEXT.md` and `CONTEXT-MAP.md` at the repo root
 - `docs/adr/` and any `src/*/docs/adr/` directories
 - `docs/agents/` — does this skill's prior output already exist?
-- `.scratch/` — sign that a local-markdown issue tracker convention is already in use
+- `docs/issues/` — sign that a local-markdown issue tracker convention is already in use
 
 ### 2. Present findings and ask
 
@@ -35,13 +35,13 @@ Assume the user does not know what these terms mean. Each section starts with a 
 
 **Section A — Issue tracker.**
 
-> Explainer: The "issue tracker" is where issues live for this repo. Skills like `to-issues`, `triage`, `to-prd`, and `qa` read from and write to it — they need to know whether to call `gh issue create`, write a markdown file under `.scratch/`, or follow some other workflow you describe. Pick the place you actually track work for this repo.
+> Explainer: The "issue tracker" is where issues live for this repo. Skills like `to-issues`, `triage`, `to-prd`, and `qa` read from and write to it — they need to know whether to write a markdown file under `docs/issues/`, call `gh issue create`, or follow some other workflow you describe. Pick the place you actually track work for this repo.
 
-Default posture: these skills were designed for GitHub. If a `git remote` points at GitHub, propose that. If a `git remote` points at GitLab (`gitlab.com` or a self-hosted host), propose GitLab. Otherwise (or if the user prefers), offer:
+Default posture: use local markdown unless the user explicitly chooses a hosted tracker. If the user asks for GitHub or GitLab, use the matching hosted tracker. Offer:
 
+- **Local markdown** — issues and PRDs live as files under `docs/issues/` in this repo (good for solo projects, local-first planning, or repos without a remote)
 - **GitHub** — issues live in the repo's GitHub Issues (uses the `gh` CLI)
 - **GitLab** — issues live in the repo's GitLab Issues (uses the [`glab`](https://gitlab.com/gitlab-org/cli) CLI)
-- **Local markdown** — issues live as files under `.scratch/<feature>/` in this repo (good for solo projects or repos without a remote)
 - **Other** (Jira, Linear, etc.) — ask the user to describe the workflow in one paragraph; the skill will record it as freeform prose
 
 **Section B — Triage label vocabulary.**
