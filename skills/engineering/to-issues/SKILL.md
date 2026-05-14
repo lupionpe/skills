@@ -40,6 +40,7 @@ Present the proposed breakdown as a numbered list. For each slice, show:
 - **Blocked by**: which other slices (if any) must complete first
 - **User stories covered**: which user stories this addresses (if the source material has them)
 - **Test intent**: behavior-level tests or validation that prove this slice is complete
+- **Evidence**: the command, UI check, CLI run, or manual verification that proves completion
 - **Commit stack**: the small, reviewable commits this slice should produce
 
 Ask the user:
@@ -50,6 +51,7 @@ Ask the user:
 - Are the correct slices marked as HITL and AFK?
 - Does the test intent prove the behavior we care about?
 - Is the test intent focused on public interfaces rather than implementation details?
+- Is the completion evidence concrete enough for an AFK agent to run or report?
 
 Iterate until the user approves the breakdown and test intent.
 
@@ -81,6 +83,7 @@ Avoid specific file paths or code snippets — they go stale fast. Exception: if
 - Behavior: <observable behavior this issue must prove>
   Public interface: <API, CLI, UI, workflow, file format, docs artifact, etc.>
   Why this matters: <risk, user value, or acceptance criterion>
+  Evidence: <exact command, UI check, CLI run, or manual verification proving completion>
   Refactor-safe because: <why this avoids implementation details>
 
 ## Commit stack
