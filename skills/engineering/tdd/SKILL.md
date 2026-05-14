@@ -50,6 +50,7 @@ Before writing any code:
 
 - [ ] Confirm with user what interface changes are needed
 - [ ] Confirm with user which behaviors to test (prioritize)
+- [ ] If working from an issue, read its `## Test intent` and `## Commit stack`
 - [ ] Identify opportunities for [deep modules](deep-modules.md) (small interface, deep implementation)
 - [ ] Design interfaces for [testability](interface-design.md)
 - [ ] List the behaviors to test (not implementation steps)
@@ -97,6 +98,12 @@ After all tests pass, look for [refactor candidates](refactoring.md):
 - [ ] Run tests after each refactor step
 
 **Never refactor while RED.** Get to GREEN first.
+
+## Commit Discipline
+
+When working from an issue with a `## Commit stack`, keep TDD vertical: one behavior at a time, then commit only clean units.
+
+A clean commit does one logical thing, builds on previous commits, preserves or adds relevant tests, avoids unrelated changes, and is easy to review or revert. Clean WIP or fixup commits before review.
 
 ## Checklist Per Cycle
 
