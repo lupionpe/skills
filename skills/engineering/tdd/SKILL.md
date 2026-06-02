@@ -50,7 +50,6 @@ Before writing any code:
 
 - [ ] Confirm with user what interface changes are needed
 - [ ] Confirm with user which behaviors to test (prioritize)
-- [ ] If working from an issue, read its `## Test intent` and `## Commit stack`
 - [ ] Identify opportunities for [deep modules](deep-modules.md) (small interface, deep implementation)
 - [ ] Design interfaces for [testability](interface-design.md)
 - [ ] List the behaviors to test (not implementation steps)
@@ -69,8 +68,6 @@ RED:   Write test for first behavior → test fails
 GREEN: Write minimal code to pass → test passes
 ```
 
-When RED fails, check the failure is the expected missing behavior, not a typo, setup error, or unrelated failure.
-
 This is your tracer bullet - proves the path works end-to-end.
 
 ### 3. Incremental Loop
@@ -82,24 +79,13 @@ RED:   Write next test → fails
 GREEN: Minimal code to pass → passes
 ```
 
-When working from an issue, PRD, or plan with a `## Commit stack`, use this loop:
-
-```
-RED:    Write one behavior test → confirm it fails for the expected reason
-GREEN:  Implement the minimum code → focused tests pass
-COMMIT: Stage only this slice → create the clean atomic commit
-NEXT:   Move to the next behavior only after the commit exists
-```
-
 Rules:
 
 - One test at a time
-- Watch each RED fail for the expected reason before writing implementation
-- Watch each GREEN pass with a fresh test run
 - Only enough code to pass current test
-- Do not move to the next commit-stack item while the current slice is green but uncommitted, unless the user explicitly says not to commit
 - Don't anticipate future tests
 - Keep tests focused on observable behavior
+- Commit atomically and stacked for review
 
 ### 4. Refactor
 
@@ -113,23 +99,12 @@ After all tests pass, look for [refactor candidates](refactoring.md):
 
 **Never refactor while RED.** Get to GREEN first.
 
-## Commit Discipline
-
-When working from an issue with a `## Commit stack`, keep TDD vertical: one behavior at a time, then commit only clean units.
-
-A clean commit does one logical thing, builds on previous commits, preserves or adds relevant tests, avoids unrelated changes, and is easy to review or revert. Clean WIP or fixup commits before review.
-
 ## Checklist Per Cycle
 
 ```
 [ ] Test describes behavior, not implementation
 [ ] Test uses public interface only
 [ ] Test would survive internal refactor
-[ ] RED failed for the expected reason
-[ ] GREEN passed on a fresh run
 [ ] Code is minimal for this test
 [ ] No speculative features added
-[ ] Every completed issue/commit-stack item has a corresponding git commit
-[ ] `git status --short` has been checked before final response
-[ ] Any uncommitted changes are explicitly explained
 ```
