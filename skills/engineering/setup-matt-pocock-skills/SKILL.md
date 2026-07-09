@@ -35,7 +35,7 @@ Assume the user does not know what these terms mean. Each section starts with a 
 
 **Section A — Issue tracker.**
 
-> Explainer: The "issue tracker" is where issues live for this repo. Skills like `to-issues`, `triage`, `to-prd`, and `qa` read from and write to it — they need to know whether to write a markdown file under `docs/issues/`, call `gh issue create`, or follow some other workflow you describe. Pick the place you actually track work for this repo.
+> Explainer: The "issue tracker" is where issues live for this repo. Skills like `to-tickets`, `triage`, `to-spec`, and `qa` read from and write to it — they need to know whether to write a markdown file under `docs/issues/`, call `gh issue create`, or follow some other workflow you describe. Pick the place you actually track work for this repo.
 
 Default posture: use local markdown unless the user explicitly chooses a hosted tracker. If the user asks for GitHub or GitLab, use the matching hosted tracker. Offer:
 
