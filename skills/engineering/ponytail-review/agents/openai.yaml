@@ -1,0 +1,5 @@
+interface:
+  display_name: "Ponytail Review"
+  short_description: "Find removable complexity in code changes"
+policy:
+  allow_implicit_invocation: false
