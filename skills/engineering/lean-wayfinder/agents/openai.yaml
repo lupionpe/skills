@@ -1,0 +1,5 @@
+interface:
+  display_name: "Lean Wayfinder"
+  short_description: "Use Wayfinder to find the simplest sufficient route to a development goal."
+policy:
+  allow_implicit_invocation: false
