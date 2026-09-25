@@ -1,15 +1,12 @@
 ---
 name: lean-wayfinder
-description: Use Wayfinder to find the simplest sufficient route to a development goal.
+description: Plan complex work with Wayfinder, choosing the simplest sufficient route.
 disable-model-invocation: true
 ---
-
-Use the skill [$mattpocock-skills:wayfinder](/Users/lupion/Documents/_CoS/03-toolkit/agents-configs/_all-skills/mattpocock-skills/skills/engineering/wayfinder/SKILL.md), applying the constraint below while naming the destination, charting the frontier, and resolving decisions.
+Read and follow $mattpocock-skills:wayfinder, applying [Simplest sufficient](#simplest-sufficient) to its decisions and tickets.
 
 ## Simplest sufficient
 
-Understand the goal and actual code flow first. Then stop at the first sufficient option: no change, existing code, standard library, native platform capability, installed dependency, minimal new code. Judge sufficiency against explicit requirements, correctness, security, accessibility, and operational constraints; prefer maintainable simplicity over line count. For bugs, resolve the root cause across affected callers.
+Understand the goal and current behavior. Stop at the first sufficient option: no change, reuse what exists, use established capabilities, then minimal additions. Meet explicit requirements and applicable constraints; favor maintainability over brevity. For bugs, plan root-cause fixes across affected areas.
 
-Every proposed abstraction, dependency, or decision ticket must earn its place through a present requirement or uncertainty blocking the destination. Put speculative needs out of scope. When extra complexity is necessary, name the concrete limitation that justifies it and the smallest useful check of the chosen approach.
-
-When creating or adopting a map, add a link to this skill under Notes and require every session, including delegated research, to apply “Simplest sufficient.” Keep Wayfinder’s planning boundaries and completion rules.
+Every proposed addition or decision ticket must address a current requirement or uncertainty blocking the destination. Keep speculative needs out of scope; retain unresolved in-scope questions in Wayfinder's fog. Justify necessary complexity with a concrete limitation and the smallest useful check of the approach.
