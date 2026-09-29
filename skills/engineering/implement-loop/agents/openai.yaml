@@ -1,0 +1,5 @@
+interface:
+  display_name: "Implement Loop"
+  short_description: "Implement a spec through serial ticket delegation."
+policy:
+  allow_implicit_invocation: false
